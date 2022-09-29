@@ -1,0 +1,141 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+  :root {
+    --cor-botao-salvar: #2CBE82;
+    --cor-botao-excluir: #DA2B40;
+    --cor-box-shadown: #a8a8a840;
+    --cor-segunda: #FFA246;
+    --cor-terca: #35E185;
+    --cor-quarta: #6688FF;
+    --cor-quinta: #B266FF;
+    --cor-sexta: #66D1FF;
+    --cor-sabado: #FF66D4;
+    --cor-domingo: #FF6666;
+  }
+
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+  .header {
+    background: #6688FF;
+    padding-right: 15rem;
+  }
+  .borda-principal {
+    border-radius: 35px;
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 2px 2px 20px var(--cor-box-shadown);
+
+  }
+  .titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    padding-right: 5rem;
+  }
+  .subtitulo {
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 1.1rem;
+  }
+
+  .borda {
+    border-radius: 0 15px 15px 0;
+  }
+  .borda-botao {
+    border-radius: 10px;
+  }
+  .salvar {
+    background-color: var(--cor-botao-salvar);
+  }
+  .excluir {
+    background-color: var(--cor-botao-excluir);
+  }
+  .hora {
+    font-size: 2rem;
+  }
+  .data {
+    font-weight: 500;
+  }
+  /*
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  */
+  main { 
+    height: 75vh;
+    overflow-y: scroll;
+  }
+  .semana {
+    overflow-x: scroll;
+  }
+  .atividade {
+    border: 1px solid var(--cor-botao-salvar);
+    border-radius: 0 10px 10px 0;
+  }
+  .dia {
+    border: 1px solid var(--cor-botao-salvar);
+    border-radius: 10px;
+    text-align: left;
+  }
+  .dia-selecionado {
+    border-style: none;
+  }
+  .hora1 {
+    max-width: 2.5rem;
+    border-style: none;
+  }
+  .minuto {
+    max-width: 2.5rem;
+    border-style: none;
+  }
+  .horario {
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px var(--cor-box-shadown);;
+  }
+  .botao-semana {
+    width: 90%;
+  }
+  .botao-dia {
+    font-size: 1.063rem;
+    width: 9.2rem;
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+  }
+  .segunda {
+    background-color: var(--cor-segunda);
+    border: 1px solid var(--cor-segunda);
+  }
+  .terca {
+    background-color: var(--cor-terca);
+    border: 1px solid var(--cor-teca);
+  }
+  .quarta {
+    background-color: var(--cor-quarta);
+    border: 1px solid var(--cor-quarta);
+  }
+  .quinta {
+    background-color: var(--cor-quinta);
+    border: 1px solid var(--cor-quinta);
+  }
+  .sexta {
+    background-color: var(--cor-sexta);
+    border: 1px solid var(--cor-sexta);
+  } 
+  .sabado {
+    background-color: var(--cor-sabado);
+    border: 1px solid var(--cor-sabado);
+  }
+  .domingo {
+    background-color: var(--cor-domingo);
+    border: 1px solid var(--cor-domingo);
+  }
+  .logo-compasso{
+    background-repeat: no-repeat;
+    width: 50%;
+    margin-top: 20rem;
+  }
+  #todosDados {
+    display: none;
+  }
