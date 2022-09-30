@@ -12,6 +12,7 @@
     --cor-sexta: #66D1FF;
     --cor-sabado: #FF66D4;
     --cor-domingo: #FF6666;
+    --cor-branco: #ffffff;
   }
 
   * {
@@ -90,9 +91,21 @@
     max-width: 2.5rem;
     border-style: none;
   }
+  .horario-nome {
+    border-radius: 10px 0 0 10px;
+    background: var(--cor-branco);
+    color: #000000;
+    box-shadow: 2px 2px 20px var(--cor-box-shadown); 
+  }
   .horario {
-    border-radius: 10px;
-    box-shadow: 2px 2px 20px var(--cor-box-shadown);;
+    border-radius: 10px 0 0 10px;
+    background: var(--cor-segunda);
+    color: var(--cor-branco);
+  }
+  .minutoAgora {
+    border-radius: 0px 10px 10px 0;
+    background: var(--cor-segunda);
+    color: var(--cor-branco);
   }
   .botao-semana {
     width: 90%;
