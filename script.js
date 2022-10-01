@@ -64,7 +64,7 @@ dados.addEventListener("submit", (e) => {
         segunda.push(pSemanal);
         localStorage.setItem("segunda", JSON.stringify(segunda)); 
         removeAtividade()
-        adicionaAtividade();
+        adicionaSegunda();
         atividade.value = "";
         hora = "";
         minuto = "";
@@ -74,6 +74,8 @@ dados.addEventListener("submit", (e) => {
         pSemanal.atividade = atividade.value;
         terca.push(pSemanal);
         localStorage.setItem("terca", JSON.stringify(terca));
+        removeAtividade();
+        adicionaTerca();
         atividade.value = "";
         hora = "";
         minuto = "";
@@ -83,6 +85,8 @@ dados.addEventListener("submit", (e) => {
         pSemanal.atividade = atividade.value;
         quarta.push(pSemanal);
         localStorage.setItem("quarta", JSON.stringify(quarta));
+        removeAtividade()
+        adicionaQuarta() 
         atividade.value = "";
         hora = "";
         minuto = "";
@@ -92,6 +96,8 @@ dados.addEventListener("submit", (e) => {
         pSemanal.atividade = atividade.value;
         quinta.push(pSemanal);
         localStorage.setItem("quinta", JSON.stringify(quinta));
+        removeAtividade();
+        adicionaQuinta();
         atividade.value = "";
         hora = "";
         minuto = "";
@@ -101,6 +107,8 @@ dados.addEventListener("submit", (e) => {
         pSemanal.atividade = atividade.value;
         sexta.push(pSemanal);
         localStorage.setItem("sexta", JSON.stringify(sexta));
+        removeAtividade();
+        adicionaSexta();
         atividade.value = "";
         hora = "";
         minuto = "";
@@ -110,6 +118,8 @@ dados.addEventListener("submit", (e) => {
         pSemanal.atividade = atividade.value;
         sabado.push(pSemanal);
         localStorage.setItem("sabado", JSON.stringify(sabado));
+        removeAtividade();
+        adicionaSabado();
         atividade.value = "";
         hora = "";
         minuto = "";
@@ -119,6 +129,8 @@ dados.addEventListener("submit", (e) => {
         pSemanal.atividade = atividade.value;
         domingo.push(pSemanal);
         localStorage.setItem("domingo", JSON.stringify(domingo));
+        removeAtividade();
+        adicionaDomingo();
         atividade.value = "";
         hora = "";
         minuto = "";
@@ -126,11 +138,11 @@ dados.addEventListener("submit", (e) => {
 }); 
 
 seF.addEventListener('click', function(){      
-    let localAtividade = localStorage.getItem("segunda") 
-    if(localAtividade){    
+    let atividadeSegunda = localStorage.getItem("segunda") 
+    if(atividadeSegunda){    
         if(todosDados.style.display == "none"){ 
             todosDados.style.display = "block";
-            adicionaAtividade()               
+            adicionaSegunda()               
         } else {
             todosDados.style.display = "none";
             removeAtividade()
@@ -139,96 +151,133 @@ seF.addEventListener('click', function(){
 })
 
 teF.addEventListener('click', function(){    
-    const localAtividade = localStorage.getItem("terca")
-    const atividadeElementos = document.querySelector(".planejamento")     
-    atividadeElementos.textContent = localAtividade
-    if(localAtividade){    
-        atividadeElementos.textContent = localAtividade
+    let atividadeTerca = localStorage.getItem("terca")    
+    if(atividadeTerca){    
         if(todosDados.style.display == "none"){ 
-            todosDados.style.display = "block";       
+            todosDados.style.display = "block";
+            adicionaTerca()          
         } else {
             todosDados.style.display = "none";
+            removeAtividade()
         }
-    }
+    }   
 })
 
 qaF.addEventListener('click', function(){    
-    const localAtividade = localStorage.getItem("quarta")
-    const atividadeElementos = document.querySelector(".planejamento")     
-    atividadeElementos.textContent = localAtividade
-    if(localAtividade){    
-        atividadeElementos.textContent = localAtividade
+    let atividadeQuarta = localStorage.getItem("quarta")    
+    if(atividadeQuarta){    
         if(todosDados.style.display == "none"){ 
-            todosDados.style.display = "block";       
+            todosDados.style.display = "block";
+            adicionaQuarta()          
         } else {
             todosDados.style.display = "none";
+            removeAtividade()
         }
-    }
+    }  
 })
   
 qiF.addEventListener('click', function(){    
-    const localAtividade = localStorage.getItem("quinta")
-    const atividadeElementos = document.querySelector(".planejamento")     
-    atividadeElementos.textContent = localAtividade
-    if(localAtividade){    
-        atividadeElementos.textContent = localAtividade
+    let atividadeQuinta = localStorage.getItem("quinta")    
+    if(atividadeQuinta){    
         if(todosDados.style.display == "none"){ 
-            todosDados.style.display = "block";       
+            todosDados.style.display = "block";
+            adicionaQuinta()          
         } else {
             todosDados.style.display = "none";
+            removeAtividade()
         }
-    }
+    }  
 })
+
 sxF.addEventListener('click', function(){    
-    const localAtividade = localStorage.getItem("sexta")
-    const atividadeElementos = document.querySelector(".planejamento")     
-    atividadeElementos.textContent = localAtividade
-    if(localAtividade){    
-        atividadeElementos.textContent = localAtividade
+    let atividadeSexta = localStorage.getItem("sexta")    
+    if(atividadeSexta){    
         if(todosDados.style.display == "none"){ 
-            todosDados.style.display = "block";       
+            todosDados.style.display = "block";
+            adicionaSexta()          
         } else {
             todosDados.style.display = "none";
+            removeAtividade()
         }
-    }
+    } 
 })
 sab.addEventListener('click', function(){    
-    const localAtividade = localStorage.getItem("sabado")
-    const atividadeElementos = document.querySelector(".planejamento")     
-    atividadeElementos.textContent = localAtividade
-    if(localAtividade){    
-        atividadeElementos.textContent = localAtividade
+    let atividadeSabado = localStorage.getItem("sabado")    
+    if(atividadeSabado){    
         if(todosDados.style.display == "none"){ 
-            todosDados.style.display = "block";       
+            todosDados.style.display = "block";
+            adicionaSabado()          
         } else {
             todosDados.style.display = "none";
+            removeAtividade()
         }
-    }
+    } 
 })
 dom.addEventListener('click', function(){    
-    const localAtividade = localStorage.getItem("domingo")
-    const atividadeElementos = document.querySelector(".planejamento")     
-    atividadeElementos.textContent = localAtividade
-    if(localAtividade){    
-        atividadeElementos.textContent = localAtividade
+    let atividadeDomingo = localStorage.getItem("domingo")    
+    if(atividadeDomingo){    
         if(todosDados.style.display == "none"){ 
-            todosDados.style.display = "block";       
+            todosDados.style.display = "block";
+            adicionaDomingo()          
         } else {
             todosDados.style.display = "none";
+            removeAtividade()
         }
-    }
+    } 
 })
 
-
-
-function adicionaAtividade(){ 
-    let localAtividade = localStorage.getItem("segunda")
-    let receberAtividade = JSON.parse(localAtividade)
-    
-    let todosDados = document.getElementById("dadosRecebidos")
+function adicionaSegunda(){ 
+    let atividadeSegunda = localStorage.getItem("segunda");    
+    let receberSegunda = JSON.parse(atividadeSegunda); 
+    let todosDados = document.querySelector(".dados")   
    
-    if(receberAtividade){
-        let recebendoAtividade = receberAtividade.map(function(atividade) {
+    if(receberSegunda){
+        let recebendoAtividade = receberSegunda.map(function(atividade) {
+            return atividade.atividade;
+        });
+
+        let recebendoHora = receberSegunda.map(function(hora){
+            return hora.hora;
+        })
+
+        recebendoHora.forEach(function(hora,indice){
+            let elementoDiv = document.createElement("div");            
+            let textoHora = document.createTextNode(hora);            
+            elementoDiv.appendChild(textoHora)
+            elementoDiv.setAttribute("class", "planejamento-hora flex-column text-left ml-4 my-4"); 
+            todosDados.appendChild(elementoDiv);
+            
+        })
+
+        
+        recebendoAtividade.forEach(function(nome, indice){
+          
+            let elementoDiv = document.createElement("div");
+            let textoAtividade = document.createTextNode(nome)          
+            elementoDiv.appendChild(textoAtividade)            
+            todosDados.appendChild(elementoDiv) 
+            elementoDiv.setAttribute("class", "planejamento flex-column text-left col-3 ml-4 my-4")             
+        })
+    
+    }
+}
+
+function removeAtividade(){
+    let todosDados = document.getElementById("dadosRecebidos")
+    let div = document.querySelector(".planejamento")
+    if(div){
+        todosDados.innerText = ""; 
+    }
+}
+
+function adicionaTerca(){ 
+    let atividadeTerca = localStorage.getItem("terca")     
+    let receberTerca = JSON.parse(atividadeTerca) 
+    
+    todosDados = document.querySelector(".dados")
+   
+    if(receberTerca){
+        let recebendoAtividade = receberTerca.map(function(atividade) {
             return atividade.atividade;
         });
 
@@ -241,23 +290,149 @@ function adicionaAtividade(){
             elementoDiv.appendChild(textoAtividade)
             todosDados.appendChild(elementoDiv)
             elementoDiv.setAttribute("class", "flex-column text-left col-3 mx-3")  
-            elementoDiv.setAttribute("class", "planejamento")
-            console.log(elementoDiv)              
+            elementoDiv.setAttribute("class", "planejamento")              
+        })
+    
+    }
+}
+function adicionaQuarta(){ 
+    let atividadeQuarta = localStorage.getItem("quarta")     
+    let receberQuarta = JSON.parse(atividadeQuarta) 
+    
+    todosDados = document.querySelector(".dados")
+   
+    if(receberQuarta){
+        let recebendoAtividade = receberQuarta.map(function(atividade) {
+            return atividade.atividade;
+        });
+
+        
+        recebendoAtividade.forEach(function(nome, indice){
+          
+            let elementoDiv = document.createElement("div");
+            let textoAtividade = document.createTextNode(nome)
             
+            elementoDiv.appendChild(textoAtividade)
+            todosDados.appendChild(elementoDiv)
+            elementoDiv.setAttribute("class", "flex-column text-left col-3 mx-3")  
+            elementoDiv.setAttribute("class", "planejamento")              
         })
     
     }
 }
 
-function removeAtividade(){
-    let todosDados = document.getElementById("dadosRecebidos")
-    let div = document.querySelector(".planejamento")
-    console.log(div)
+function adicionaQuinta(){ 
+    let atividadeQuinta = localStorage.getItem("quinta")     
+    let receberQuinta = JSON.parse(atividadeQuinta) 
+    
+    todosDados = document.querySelector(".dados")
+   
+    if(receberQuinta){
+        let recebendoAtividade = receberQuinta.map(function(atividade) {
+            return atividade.atividade;
+        });
 
-    if(div){
-        todosDados.innerText = ""; 
+        
+        recebendoAtividade.forEach(function(nome, indice){
+          
+            let elementoDiv = document.createElement("div");
+            let textoAtividade = document.createTextNode(nome)
+            
+            elementoDiv.appendChild(textoAtividade)
+            todosDados.appendChild(elementoDiv)
+            elementoDiv.setAttribute("class", "flex-column text-left col-3 mx-3")  
+            elementoDiv.setAttribute("class", "planejamento")              
+        })
+    
     }
 }
+
+function adicionaSexta(){ 
+    let atividadeSexta = localStorage.getItem("sexta")     
+    let receberSexta = JSON.parse(atividadeSexta) 
+    
+    todosDados = document.querySelector(".dados")
+   
+    if(receberSexta){
+        let recebendoAtividade = receberSexta.map(function(atividade) {
+            return atividade.atividade;
+        });
+
+        
+        recebendoAtividade.forEach(function(nome, indice){
+          
+            let elementoDiv = document.createElement("div");
+            let textoAtividade = document.createTextNode(nome)
+            
+            elementoDiv.appendChild(textoAtividade)
+            todosDados.appendChild(elementoDiv)
+            elementoDiv.setAttribute("class", "flex-column text-left col-3 mx-3")  
+            elementoDiv.setAttribute("class", "planejamento")              
+        })
+    
+    }
+}
+
+function adicionaSabado(){ 
+    let atividadeSabado = localStorage.getItem("sabado");    
+    let receberSabado = JSON.parse(atividadeSabado); 
+    let todosDados = document.querySelector(".dados")      
+   
+    if(receberSabado){
+        let recebendoAtividade = receberSabado.map(function(atividade) {
+            return atividade.atividade;
+        });
+
+        
+        recebendoAtividade.forEach(function(nome, indice){
+          
+            let elementoDiv = document.createElement("div");
+            let textoAtividade = document.createTextNode(nome)
+            
+            elementoDiv.appendChild(textoAtividade)
+            todosDados.appendChild(elementoDiv)
+            elementoDiv.setAttribute("class", "flex-column text-left col-3 mx-3")  
+            elementoDiv.setAttribute("class", "planejamento")              
+        })
+    
+    }
+}
+
+function adicionaDomingo(){ 
+    let atividadeDomingo = localStorage.getItem("domingo")     
+    let receberDomingo = JSON.parse(atividadeDomingo) 
+    
+    todosDados = document.querySelector(".dados")
+   
+    if(receberDomingo){
+        let recebendoAtividade = receberDomingo.map(function(atividade) {
+            return atividade.atividade;
+        });
+
+        
+        recebendoAtividade.forEach(function(nome, indice){
+          
+            let elementoDiv = document.createElement("div");
+            let textoAtividade = document.createTextNode(nome)
+            
+            elementoDiv.appendChild(textoAtividade)
+            todosDados.appendChild(elementoDiv)
+            elementoDiv.setAttribute("class", "flex-column text-left col-3 mx-3")  
+            elementoDiv.setAttribute("class", "planejamento")              
+        })
+    
+    }
+}
+
+
+
+/*function retorno (atividadeSegunda, atividadeTerca){
+    segunda = JSON.parse(atividadeSegunda)
+    terca = JSON.parse(atividadeTerca)
+    return segunda, terca
+}
+
+console.log(retorno())*/ 
 
 // Remove todos os descendentes da <div id="alvo"> 
 
