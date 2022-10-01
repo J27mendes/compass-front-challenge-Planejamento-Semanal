@@ -1,8 +1,8 @@
 let dados = document.querySelector("#dados");
-let planejamento = document.querySelector(".planejamento");
+//let planejamento = document.querySelector(".planejamento");
 let apagar = document.querySelector("#apagar")
 let adicionar = document.getElementById("adicionar")
-//const todosDados = document.querySelector("#todosDados")
+let todosDados = document.querySelector("#todosDados")
 let botaoSegunda = document.querySelector(".segunda")
 //const diaSelecionado = document.querySelector("#dia_selecionado")
 let dia = document.querySelector('#dia_selecionado')
@@ -31,18 +31,18 @@ let domingo = [];
 horaAtual.addEventListener('change', function(){
     hora = parseInt(horaAtual.value)
     if(hora < 10) {
-        hora = `0${hora}:h`             
+        hora = `0${hora}h`             
     } else {
-        hora =`${hora}:h`
+        hora =`${hora}h`
     }   
 })
 
 minutoAtual.addEventListener('change', function(){
     minuto = parseInt(minutoAtual.value)
     if(minuto < 10) {
-        minuto = `0${minuto}:m`
+        minuto = `0${minuto}m`
     } else {
-        minuto = `${minuto}:m`
+        minuto = `${minuto}m`
     }   
 })
 
@@ -229,7 +229,13 @@ dom.addEventListener('click', function(){
 function adicionaSegunda(){ 
     let atividadeSegunda = localStorage.getItem("segunda");    
     let receberSegunda = JSON.parse(atividadeSegunda); 
-    let todosDados = document.querySelector(".dados")   
+    let dadosHora = document.querySelector(".dados");
+    let dadosMinuto = document.querySelector(".dadosMinuto")
+    let dadosAtividade = document.querySelector(".dadosAtividade")
+    let botaoApagar = document.querySelector(".botaoApagar") 
+    //let horaPlanejada = document.querySelector(".Planejamento_hora")
+    //let p = document.getElementsByClassName(".planejamento")
+     
    
     if(receberSegunda){
         let recebendoAtividade = receberSegunda.map(function(atividade) {
@@ -238,35 +244,59 @@ function adicionaSegunda(){
 
         let recebendoHora = receberSegunda.map(function(hora){
             return hora.hora;
-        })
+        });
+
+        let recebendoMinuto = receberSegunda.map(function(minuto){
+            return minuto.minuto
+        });
 
         recebendoHora.forEach(function(hora,indice){
             let elementoDiv = document.createElement("div");            
             let textoHora = document.createTextNode(hora);            
             elementoDiv.appendChild(textoHora)
-            elementoDiv.setAttribute("class", "planejamento-hora flex-column text-left ml-4 my-4"); 
-            todosDados.appendChild(elementoDiv);
-            
+            elementoDiv.setAttribute("class", "planejamento-hora flex-column horario text-right py-4 my-2 pl-2 pr-0 ml-4 mr-0"); 
+            dadosHora.appendChild(elementoDiv);            
+        })
+
+        recebendoMinuto.forEach(function(minuto, indice){
+            let elementoDiv = document.createElement("div");
+            let textoMinuto = document.createTextNode(minuto);
+            elementoDiv.appendChild(textoMinuto)
+            elementoDiv.setAttribute("class", "planejamento-minuto minutoAgora py-4 pr-1 ml-0 my-2 mr-1 text-left");
+            dadosMinuto.appendChild(elementoDiv);
         })
 
         
-        recebendoAtividade.forEach(function(nome, indice){
-          
-            let elementoDiv = document.createElement("div");
-            let textoAtividade = document.createTextNode(nome)          
+        recebendoAtividade.forEach(function(nome, indice){ 
+            let elementoDiv = document.createElement("p");
+            let textoAtividade = document.createTextNode(nome); 
+            let elementoBotao = document.createElement("button");
+            let textoBotao = document.createTextNode("Apagar")         
             elementoDiv.appendChild(textoAtividade)            
-            todosDados.appendChild(elementoDiv) 
-            elementoDiv.setAttribute("class", "planejamento flex-column text-left col-3 ml-4 my-4")             
+            dadosAtividade.appendChild(elementoDiv)            
+            elementoDiv.setAttribute("class", "planejamento flex-column bg-light text-start pt-2 h-75 row-2 w-50 flex-wrap px-2 ml-4 mt-2 mb-2 mr-1") 
+           
+            elementoBotao.appendChild(textoBotao) 
+            botaoApagar.appendChild(elementoBotao)
+            elementoDiv.appendChild(elementoBotao)   
+            elementoBotao.setAttribute("class", "apagar ml-0 ml-4 mt-2 mb-2 px-1 py-1 btn btn-danger")         
         })
     
     }
 }
 
 function removeAtividade(){
-    let todosDados = document.getElementById("dadosRecebidos")
+    let dadosHora = document.getElementById("dadosRecebidos")
+    let dadosMinuto = document.querySelector(".dadosMinuto")
+    let dadosAtividade = document.querySelector(".dadosAtividade")
+    let botaoApagar = document.querySelector(".botaoApagar")
+    
     let div = document.querySelector(".planejamento")
     if(div){
-        todosDados.innerText = ""; 
+        dadosHora.innerText = ""; 
+        dadosAtividade.innerText = "";
+        dadosMinuto.innerText = "";
+        botaoApagar.innerText = "";
     }
 }
 
@@ -290,7 +320,7 @@ function adicionaTerca(){
             elementoDiv.appendChild(textoAtividade)
             todosDados.appendChild(elementoDiv)
             elementoDiv.setAttribute("class", "flex-column text-left col-3 mx-3")  
-            elementoDiv.setAttribute("class", "planejamento")              
+            todosDados.setAttribute("class", "planejamento")              
         })
     
     }

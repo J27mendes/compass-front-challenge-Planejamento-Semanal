@@ -30,7 +30,7 @@
     <main>
         <form id="dados" class="d-flex justify-content-start mt-5 mr-0">
             <label for="atividade"></label>
-            <input type="text" name="atividade" class="atividade mr-3 ml-0 py-1 pl-5 col-5" placeholder="Atividade" id="atividade" required value>  
+            <input type="text" name="atividade" class="atividade mr-3 ml-0 py-1 pl-5 col-5" placeholder="Atividade" id="atividade" maxLength="120" required value>  
             <span class="dia pl-1 mr-3 d-flex align-items-center">  
                 <select id="dia_selecionado" class="dia-selecionado" name="dia_selecionado" requiered>
                     <option value="segunda-feira">Segunda-feira</option>
@@ -60,19 +60,19 @@
                 <button id="domingo" class="botao-dia domingo text-white">Domingo</button>            
             </div>
         </section>
-        <section id="todosDados">
-            <div id="dadosRecebidos" class="dados d-flex flex-row justify-content-start bg-light text-dark mt-4 align-items-start ml-3">
-                <div id="ph"class="planejamento_hora flex-column">
-                    <!-- <div class="planejamento-hora horario font-weight-bold py-4 pl-1 ml-4 mr-0">22222222222</div> -->
-                </div>
-                <div class="planejamento-minuto flex-column">
-                    <!-- <div class="planejamento-minuto minutoAgora py-4 pr-1 ml-0 mr-1 text-left">3333333333</div>  -->
-                </div>
-                <div class="planejamento flex-column">
-                    <!-- <div class="planejamento flex-column col-3 mx-3">33333333</div> -->
-                </div>
-                <!--<button id="apagar" class="apagar align-self-start">apagar</button> -->
+        <section id="todosDados" class="d-flex flex-row">
+            <div id="dadosRecebidos" class="dados d-flex flex-column">
+
             </div>
+            <div class="dadosMinuto d-flex flex-column">
+
+            </div>         
+            <div class="dadosAtividade d-flex flex-column">
+
+            </div>
+            <div class="botaoApagar d-flex flex-column">
+                
+            </div>  
         </section>
         <section class="d-flex justify-content-end align-items-end mb-0">
             <img class="logo-compasso" src="./imagens/logo-compasso.svg" alt="logo compasso">
