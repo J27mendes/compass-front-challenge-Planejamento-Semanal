@@ -61,10 +61,6 @@
   .data {
     font-weight: 500;
   }
-  /*
-  font-family: 'Nunito', sans-serif;
-  font-family: 'Poppins', sans-serif;
-  */
   main { 
     height: 75vh;
     overflow-y: scroll;
@@ -97,16 +93,6 @@
     background: var(--cor-branco);
     color: var(--cor-preto);
     box-shadow: 2px 2px 20px var(--cor-box-shadown); 
-  }
-  .horario {
-    border-radius: 10px 0 0 10px;
-    background: var(--cor-segunda);
-    color: var(--cor-branco);
-  }
-  .minutoAgora {
-    border-radius: 0px 10px 10px 0;
-    background: var(--cor-segunda);
-    color: var(--cor-preto);
   }
   .botao-semana {
     width: 90%;
@@ -154,8 +140,34 @@
     display: none;
     position: relative;
   }
+  .horaSegunda{    
+    background: var(--cor-segunda);
+  }
+  .horaTerca {
+    background: var(--cor-terca);
+  }
+  .horaQuarta {
+    background: var(--cor-quarta);
+  }
+  .horaQuinta {
+    background: var(--cor-quinta);
+  }
+  .horaSexta {
+    background: var(--cor-sexta);
+  }
+  .horaSabado {
+    background: var(--cor-sabado);
+  }
+  .horaDomingo {
+    background: var(--cor-domingo);
+  }
   .planejamento-hora {
+    border-radius: 10px 0 0 10px;
     color: var(--cor-preto);
+  }
+  .planejamento-minuto {
+      border-radius: 0px 10px 10px 0;
+      color: var(--cor-preto);
   }
   .planejamento {
     border-radius: 10px 10px;

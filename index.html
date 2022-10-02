@@ -18,8 +18,8 @@
                 <p class="subtitulo text-sm-left">Utilize o formulário para adicionar novas tarefas:</p>
             </section>
             <section>
-                <button onclick="atividade()" class="salvar borda-botao btn btn-success m-2">Salvar localStorage</button>
-                <button class="excluir borda-botao btn btn-danger m-2">Excluir localStorage</button>
+                <button onclick="salvarLocalStorage()" class="salvar borda-botao btn btn-success m-2">Salvar localStorage</button>
+                <button onclick="removeLocalStorage()" class="excluir borda-botao btn btn-danger m-2">Excluir localStorage</button>
             </section>
             <section class="pr-3">
                 <p class="hora text-center m-0">10:58</p>
@@ -43,10 +43,10 @@
                 </select>
             </span>
             <span class="dia pl-1 mr-2 d-flex align-items-center">          
-                <input class="hora1" id="horaAtual" type="number" min="00" max="24" requiered>h<input id="minutoAtual"class="minuto" type="number" min="00" max="59" requiered>m
+                <input class="hora1" id="horaAtual" type="number" min="00" max="23" requiered>h<input id="minutoAtual"class="minuto" type="number" min="00" max="59" requiered>m
             </span>
             <input type="submit" id="adicionar" class="salvar borda-botao btn btn-success m-2"  value="+ Adicionar Atividade">
-            <input type="submit" id="excluir" class="excluir borda-botao btn btn-danger my-2" value="- Excluir Todos">
+            <input id="excluir" onclick="removeAtividade()" class="excluir borda-botao btn btn-danger my-2" value="- Excluir Todos">
         </form>   
         <section class="d-flex justify-content-start mt-5 mr-0">
             <div class="horario-nome py-4 px-2 ml-4 mr-1">Horário</div>
