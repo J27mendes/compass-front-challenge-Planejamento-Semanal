@@ -62,10 +62,11 @@
     font-weight: 500;
   }
   main { 
-    height: 75vh;
+    height: 100vh;
     overflow-y: scroll;
   }
   .semana {
+    width: 100%;
     overflow-x: scroll;
   }
   .atividade {
@@ -131,13 +132,18 @@
     background-color: var(--cor-domingo);
     border: 1px solid var(--cor-domingo);
   }
+ 
   .logo-compasso{
     background-repeat: no-repeat;
-    width: 50%;
-    margin-top: 5rem;
+    position: relative;
+    width: 30%;
+    top: 10rem;
+    right: 2rem;
+    z-index: -1;
   }
   #todosDados {
     display: none;
+    margin: 1rem 0;
     position: relative;
   }
   .horaSegunda{    
@@ -186,5 +192,41 @@
   .erro {
     border-color: var(--cor-botao-excluir) ;
 }
- 
+
+@media (max-width: 480px) {
+
+  .borda {
+    border-radius: 0 15px 15px 0;
+    padding: 0;
+  }
+  #dados{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .logo-compasso{
+    display: none;
+  }
+  .excluir {
+    padding: 0rem 0rem;
+    margin: 2rem 4rem;
+  }
+  .atividade {    
+    margin-top: 0px;
+    margin-bottom: 1rem;
+  }
+  .horario-nome {
+    display: none;
+  }
+  .dia {
+    margin: 1rem 0rem;
+  }
+  .botao-semana {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 1rem;
+    margin: 0 2rem;
+  }
+}
   

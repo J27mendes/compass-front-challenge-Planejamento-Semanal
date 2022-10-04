@@ -49,7 +49,7 @@
             <input type="submit" id="adicionar" onclick="validar()" class="salvar borda-botao btn btn-success m-2"  value="+ Adicionar Atividade">
             <input id="excluir" onclick="removeLocalStorage()" class="excluir borda-botao btn btn-danger my-2" value="- Excluir Todos">
         </form>   
-        <section class="d-flex justify-content-start mt-5 mr-0">
+        <section class="text-break d-flex justify-content-start mt-5 mr-0">
             <div class="horario-nome py-4 px-2 ml-4 mr-1">Horário</div>
             <div class="botao-semana semana d-flex justify-content-around align-items-start border-0">
                 <button id="segunda" class="botao-dia segunda text-white">Segunda-Feira</button>
@@ -62,20 +62,22 @@
             </div>
         </section>
         <section id="todosDados" class="d-flex flex-row">
+            
             <div id="dadosRecebidos" class="dados d-flex flex-column">
 
             </div>
             <div class="dadosMinuto d-flex flex-column">
 
-            </div>         
+            </div> 
             <div class="dadosAtividade d-flex flex-column">
 
-            </div>
+            </div>   
             <div class="botaoApagar d-flex flex-column">
                 
-            </div>  
+            </div> 
+             
         </section>
-        <section class="d-flex justify-content-end align-items-end mb-0">
+        <section class="logo d-flex justify-content-end align-items-end mb-0">
             <img class="logo-compasso" src="./imagens/compassLogo.png" alt="logo compasso">
         </section> 
     </main> 

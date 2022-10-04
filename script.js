@@ -161,82 +161,81 @@ salvar.addEventListener("click", (e) => {
     }
 });
     
-    dados.addEventListener("submit", (e) => {
-        e.preventDefault();
+dados.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-        let atividade = document.querySelector("#atividade");
-        let pSemanal = {
-            hora: '',
-            minuto: '',
-            atividade: ''
-        }
-        
-        let selecionado = dia.value
-        if(selecionado == 'segunda-feira'){
-            pSemanal.hora = hora;
-            pSemanal.minuto = minuto;
-            pSemanal.atividade = atividade.value;
-            segunda.push(pSemanal);
-            //id = hora+minuto        
-            localStorage.setItem("segunda", JSON.stringify(segunda)); 
-            removeAtividade()
-            adicionaSegunda();
-            atividade.value = "";          
-        } else if(selecionado == 'terca-feira'){
-            pSemanal.hora = hora;
-            pSemanal.minuto = minuto;
-            pSemanal.atividade = atividade.value;
-            terca.push(pSemanal);
-            localStorage.setItem("terca", JSON.stringify(terca));
-            removeAtividade();
-            adicionaTerca();
-            atividade.value = "";
-        } else if(selecionado == 'quarta-feira'){
-            pSemanal.hora = hora;
-            pSemanal.minuto = minuto;
-            pSemanal.atividade = atividade.value;
-            quarta.push(pSemanal);
-            localStorage.setItem("quarta", JSON.stringify(quarta));
-            removeAtividade()
-            adicionaQuarta() 
-            atividade.value = "";
-        } else if(selecionado == 'quinta-feira'){
-            pSemanal.hora = hora;
-            pSemanal.minuto = minuto;
-            pSemanal.atividade = atividade.value;
-            quinta.push(pSemanal);
-            localStorage.setItem("quinta", JSON.stringify(quinta));
-            removeAtividade();
-            adicionaQuinta();
-            atividade.value = "";
-        } else if(selecionado == 'sexta-feira'){
-            pSemanal.hora = hora;
-            pSemanal.minuto = minuto;
-            pSemanal.atividade = atividade.value;
-            sexta.push(pSemanal);
-            localStorage.setItem("sexta", JSON.stringify(sexta));
-            removeAtividade();
-            adicionaSexta();
-            atividade.value = "";
-        } else if(selecionado == 'sabado'){
-            pSemanal.hora = hora;
-            pSemanal.minuto = minuto;
-            pSemanal.atividade = atividade.value;
-            sabado.push(pSemanal);
-            localStorage.setItem("sabado", JSON.stringify(sabado));
-            removeAtividade();
-            adicionaSabado();
-            atividade.value = "";
-        } else if(selecionado == 'domingo'){
-            pSemanal.hora = hora;
-            pSemanal.minuto = minuto;
-            pSemanal.atividade = atividade.value;
-            domingo.push(pSemanal);
-            localStorage.setItem("domingo", JSON.stringify(domingo));
-            removeAtividade();
-            adicionaDomingo();
-            atividade.value = "";
-        }
+    let atividade = document.querySelector("#atividade");
+    let pSemanal = {
+        hora: '',
+        minuto: '',
+        atividade: ''
+    }
+    
+    let selecionado = dia.value
+    if(selecionado == 'segunda-feira'){
+        pSemanal.hora = hora;
+        pSemanal.minuto = minuto;
+        pSemanal.atividade = atividade.value;
+        segunda.push(pSemanal);      
+        localStorage.setItem("segunda", JSON.stringify(segunda)); 
+        removeAtividade()
+        adicionaSegunda();
+        atividade.value = "";          
+    } else if(selecionado == 'terca-feira'){
+        pSemanal.hora = hora;
+        pSemanal.minuto = minuto;
+        pSemanal.atividade = atividade.value;
+        terca.push(pSemanal);
+        localStorage.setItem("terca", JSON.stringify(terca));
+        removeAtividade();
+        adicionaTerca();
+        atividade.value = "";
+    } else if(selecionado == 'quarta-feira'){
+        pSemanal.hora = hora;
+        pSemanal.minuto = minuto;
+        pSemanal.atividade = atividade.value;
+        quarta.push(pSemanal);
+        localStorage.setItem("quarta", JSON.stringify(quarta));
+        removeAtividade()
+        adicionaQuarta() 
+        atividade.value = "";
+    } else if(selecionado == 'quinta-feira'){
+        pSemanal.hora = hora;
+        pSemanal.minuto = minuto;
+        pSemanal.atividade = atividade.value;
+        quinta.push(pSemanal);
+        localStorage.setItem("quinta", JSON.stringify(quinta));
+        removeAtividade();
+        adicionaQuinta();
+        atividade.value = "";
+    } else if(selecionado == 'sexta-feira'){
+        pSemanal.hora = hora;
+        pSemanal.minuto = minuto;
+        pSemanal.atividade = atividade.value;
+        sexta.push(pSemanal);
+        localStorage.setItem("sexta", JSON.stringify(sexta));
+        removeAtividade();
+        adicionaSexta();
+        atividade.value = "";
+    } else if(selecionado == 'sabado'){
+        pSemanal.hora = hora;
+        pSemanal.minuto = minuto;
+        pSemanal.atividade = atividade.value;
+        sabado.push(pSemanal);
+        localStorage.setItem("sabado", JSON.stringify(sabado));
+        removeAtividade();
+        adicionaSabado();
+        atividade.value = "";
+    } else if(selecionado == 'domingo'){
+        pSemanal.hora = hora;
+        pSemanal.minuto = minuto;
+        pSemanal.atividade = atividade.value;
+        domingo.push(pSemanal);
+        localStorage.setItem("domingo", JSON.stringify(domingo));
+        removeAtividade();
+        adicionaDomingo();
+        atividade.value = "";
+    }
 });
 
 seF.addEventListener('click', function(){      
@@ -332,7 +331,20 @@ dom.addEventListener('click', function(){
 })
 
 function removeLocalStorage(){
-    localStorage.clear()
+    segunda = []
+    localStorage.setItem("segunda", JSON.stringify(segunda)); 
+    terca = []
+    localStorage.setItem("terca", JSON.stringify(terca)); 
+    quarta = []
+    localStorage.setItem("quarta", JSON.stringify(quarta)); 
+    quinta = []
+    localStorage.setItem("quinta", JSON.stringify(quinta)); 
+    sexta = []
+    localStorage.setItem("sexta", JSON.stringify(sexta)); 
+    sabado = []
+    localStorage.setItem("sabado", JSON.stringify(sabado)); 
+    domingo = []   
+    localStorage.setItem("domingo", JSON.stringify(domingo));    
     removeAtividade()
 }
 
@@ -371,20 +383,21 @@ function adicionaSegunda(){
         let recebendoMinuto = receberSegunda.map(function(minuto){
             return minuto.minuto
         });
+       
 
         recebendoHora.forEach(function(hora,indice){
             let elementoDiv = document.createElement("div");            
             let textoHora = document.createTextNode(hora);            
             elementoDiv.appendChild(textoHora)
-            elementoDiv.setAttribute("class", "planejamento-hora flex-column horaSegunda text-right py-4 my-2 pl-2 pr-0 ml-4 mr-0"); 
-            dadosHora.appendChild(elementoDiv);         
+            elementoDiv.setAttribute("class", "planejamento-hora flex-column horaSegunda text-right py-4 my-3 pl-2 pr-0 ml-4 mr-0"); 
+            dadosHora.appendChild(elementoDiv); 
         })
 
         recebendoMinuto.forEach(function(minuto, indice){
             let elementoDiv = document.createElement("div");
             let textoMinuto = document.createTextNode(minuto);
             elementoDiv.appendChild(textoMinuto)
-            elementoDiv.setAttribute("class", "planejamento-minuto horaSegunda py-4 pr-1 ml-0 my-2 mr-1 text-left");
+            elementoDiv.setAttribute("class", "planejamento-minuto flex-column horaSegunda py-4 pr-1 ml-0 my-3 mr-1 text-left");
             dadosMinuto.appendChild(elementoDiv);
         })
         
@@ -395,16 +408,16 @@ function adicionaSegunda(){
             let textoBotao = document.createTextNode("Apagar")         
             elementoDiv.appendChild(textoAtividade)            
             dadosAtividade.appendChild(elementoDiv)            
-            elementoDiv.setAttribute("class", "planejamento flex-column bg-light text-start pt-2 h-75 row-2 w-50 flex-wrap px-2 ml-4 mt-2 mb-2 mr-1") 
+            elementoDiv.setAttribute("class", "planejamento bg-light flex-column text-start pt-2 h-75 row-2 w-50 flex-wrap px-2 ml-4 mt-2 mb-2 mr-1") 
             
             elementoBotao.appendChild(textoBotao) 
             botaoApagar.appendChild(elementoBotao)
             elementoDiv.appendChild(elementoBotao)   
-            elementoBotao.setAttribute("class", "apagar ml-0 ml-4 mt-2 mb-2 px-1 py-1 btn btn-danger")
+            elementoBotao.setAttribute("class", "apagar ml-0 ml-4 mt-2 mb-2 px-1 py-1 d-flex j btn btn-danger")
             elementoBotao.addEventListener('click', function() {
-                removerItem(indice)
+            removerItem(indice)
             })
-        })                                
+        })
     }
 
     function removerItem(indice){
@@ -805,4 +818,3 @@ function adicionaDomingo(){
     }
 }
 
-  
