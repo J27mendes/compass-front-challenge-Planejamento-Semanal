@@ -18,19 +18,19 @@
                 <p class="subtitulo text-sm-left">Utilize o formulário para adicionar novas tarefas:</p>
             </section>
             <section>
-                <button onclick="salvarLocalStorage()" class="salvar borda-botao btn btn-success m-2">Salvar localStorage</button>
+                <button type="submit" id="salvar" class="salvar borda-botao btn btn-success m-2">Salvar localStorage</button>
                 <button onclick="removeLocalStorage()" class="excluir borda-botao btn btn-danger m-2">Excluir localStorage</button>
             </section>
             <section class="pr-3">
-                <p class="hora text-center m-0">10:58</p>
-                <p class="data">27 de Setembro de 2022</p>
+                <p class="hora text-center m-0"></p>
+                <p class="data"></p>
             </section>
         </section>
     </header> 
     <main>
         <form id="dados" class="d-flex justify-content-start mt-5 mr-0">
             <label for="atividade"></label>
-            <input type="text" name="atividade" class="atividade mr-3 ml-0 py-1 pl-5 col-5" placeholder="Atividade" id="atividade" maxLength="120" required value>  
+            <input type="text" name="atividade" class="atividade mr-3 ml-0 py-1 pl-5 col-5" placeholder="Atividade" id="atividade" maxLength="120" required>  
             <span class="dia pl-1 mr-3 d-flex align-items-center">  
                 <select id="dia_selecionado" class="dia-selecionado" name="dia_selecionado" requiered>
                     <option value="segunda-feira">Segunda-feira</option>
@@ -42,11 +42,12 @@
                     <option value="domingo">Domingo</option>
                 </select>
             </span>
-            <span class="dia pl-1 mr-2 d-flex align-items-center">          
-                <input class="hora1" id="horaAtual" type="number" min="00" max="23" requiered>h<input id="minutoAtual"class="minuto" type="number" min="00" max="59" requiered>m
-            </span>
-            <input type="submit" id="adicionar" class="salvar borda-botao btn btn-success m-2"  value="+ Adicionar Atividade">
-            <input id="excluir" onclick="removeAtividade()" class="excluir borda-botao btn btn-danger my-2" value="- Excluir Todos">
+            <span class="inputHora dia pl-1 mr-2 d-flex align-items-center">        
+                <input class="hora1" id="horaAtual" type="number" min="00" max="23" min-length="1" required>h
+                <input id="minutoAtual"class="minuto" type="number" min="00" max="59" min-length="1" required>m
+            </span> 
+            <input type="submit" id="adicionar" onclick="validar()" class="salvar borda-botao btn btn-success m-2"  value="+ Adicionar Atividade">
+            <input id="excluir" onclick="removeLocalStorage()" class="excluir borda-botao btn btn-danger my-2" value="- Excluir Todos">
         </form>   
         <section class="d-flex justify-content-start mt-5 mr-0">
             <div class="horario-nome py-4 px-2 ml-4 mr-1">Horário</div>
@@ -75,7 +76,7 @@
             </div>  
         </section>
         <section class="d-flex justify-content-end align-items-end mb-0">
-            <img class="logo-compasso" src="./imagens/logo-compasso.svg" alt="logo compasso">
+            <img class="logo-compasso" src="./imagens/compassLogo.png" alt="logo compasso">
         </section> 
     </main> 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
